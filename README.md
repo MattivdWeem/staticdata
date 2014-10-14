@@ -53,6 +53,26 @@ Will return everything of the data group.
 
 Just check the class file for the rest of the functions ATM (larger readmeh incomming!!)
 
+___
+Want it to entirely replace sql? You might want to check:
+
+[This link](https://github.com/search?utf8=%E2%9C%93&q=php+sql+array)
+
+
+___
+Function list:
+ - runable  : Check if class is runable
+ - newSet   : Create a new data set
+ - create   : Create a new data object
+ - latestId : Obtain latest inserted id
+ - delete   : Delete data object
+ - read     : Return single data object by id
+ - update   : Update a data object
+ - all      : Return all data objects
+ - allSets  : Return array of all data sets
+ - where    : Returns array of all data objects matching criteria
+ - .....
+
 hf ;).
 
 ~~ Matti van de Weem .nl
