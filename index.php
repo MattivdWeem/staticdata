@@ -19,6 +19,8 @@ endif;
 
 echo'<pre>';
 print_r($data->getAll(false));
+print_r($data->newSet('users'));
 echo'</pre>';
+
 
 ?>

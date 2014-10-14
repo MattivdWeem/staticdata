@@ -42,6 +42,19 @@ class data{
     }
 
     /*
+    * Create a new data set
+    * @param str name , the name of the new set
+    */
+    public function newSet($name){
+        $path = $this->folder.$name;
+        if (!file_exists($path)):
+            mkdir($path, 0755, true);
+            return true;
+        endif;
+        return array('message'=>'Set already exists','e'=>false);
+    }
+
+    /*
     *   Create a new data object.
     *   @param array data The data you want to push into the set.
     *   @return void
