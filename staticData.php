@@ -70,6 +70,57 @@ class data{
         return $max;
     }
 
+    /*
+    *
+    *   Delete object with given id
+    *
+    *   @param int id given id to remove
+    *   @return bool
+    */
+    public function delete($id){
+        $file = $this->folder.$this->data_set.'/'.$id.$this->extension;
+        if(file_exists($file)):
+            unlink($file);
+            return true;
+        endif;
+        return false;
+    }
+
+    /*
+    *
+    *   Read given id
+    *
+    *   @param id, the given id to read
+    *   @param json, if json is false, the content will be returned as an array
+    *   @return json/array of selected object
+    */
+    public function read($id,$json = true){
+        $file = $this->folder.$this->data_set.'/'.$id.$this->extension;
+        $give = '';
+        if(file_exists($file)):
+            $give = file_get_contents($file);
+        endif;
+        if($json):return ($give);endif;
+        return json_decode($give,true);
+    }
+
+    /*
+    *
+    *   update the given id with new data
+    *
+    *   @param id the id to update
+    *   @param data the new data
+    *   @return bool
+    */
+    public function update($id,$data){
+        $file = $this->folder.$this->data_set.'/'.$id.$this->extension;
+        if(file_exists($file)):
+            file_put_contents($file,json_encode($data));
+            return true;
+        endif;
+        return false;
+    }
+
 
 
 
