@@ -12,6 +12,8 @@
 
     );
 
-    $data->create($array);
+    if($data->runable):
+        $data->create($array);
+    endif;
 
 ?>

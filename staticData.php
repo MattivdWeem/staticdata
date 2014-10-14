@@ -121,6 +121,45 @@ class data{
         return false;
     }
 
+    /*
+    *
+    *   Retrieve all rows from collection
+    *
+    *   @param json Return as json or as array
+    *   @return array or json
+    */
+    public function getAll($json = true){
+        $files = glob($this->folder.$this->data_set.'/*.{'.substr($this->extension,1).'}', GLOB_BRACE);
+        $give = array();
+        $contents = array();
+        foreach($files as $file):
+            $contents = array();
+            $contents['id'] = $id = str_replace($this->extension,'',basename($file));
+            $contents_f = file_get_contents($file);
+            $contents_f = json_decode($contents_f, true);
+            $contents += $contents_f;
+            $give[$id] = $contents;
+        endforeach;
+        asort($give);
+        if($json):return json_encode($give);endif;
+        return $give;
+    }
+
+    /*
+    *   Select from where key = value
+    *
+    *   @param str key the given key to search
+    *   @param str value    the given string the key should match
+    *   @return array of matching objects
+    */
+    public function where($key,$value){
+        $return_array = array();
+        foreach($this->getAll(false) as $construct):
+            if(isset($construct[$key]) && $construct[$key] == $value):
+                $return_array += $construct;
+            endif;
+        endforeach;
+      return $return_array;
 
 
 
