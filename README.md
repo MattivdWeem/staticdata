@@ -64,7 +64,9 @@ Function list:
  - runable  : Check if class is runable
  - newSet   : Create a new data set
  - create   : Create a new data object
- - latestId : Obtain latest inserted id
+ - last     : Obtain latest inserted id
+ - first    : Obtain first inserted id
+ - total    : Obtain total of rows
  - delete   : Delete data object
  - read     : Return single data object by id
  - update   : Update a data object

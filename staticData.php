@@ -61,7 +61,7 @@ class data{
     */
     public function create($data = array()){
         $content = json_encode($data);
-        $id = $this->latestId();
+        $id = $this->last();
         $id++;
         file_put_contents($this->folder.$this->data_set.'/'.$id.$this->extension,$content);
     }
@@ -71,7 +71,7 @@ class data{
     *
     *   @return int max id
     */
-    public function latestId(){
+    public function last(){
         $files = glob($this->folder.$this->data_set.'/*.{'.substr($this->extension,1).'}', GLOB_BRACE);
         $max = 0;
         foreach($files as $file):
@@ -82,6 +82,38 @@ class data{
         endforeach;
         return $max;
     }
+
+    /*
+    *   obtain the total from this data set
+    *
+    *   @return int total count
+    */
+    public function total(){
+        $files = glob($this->folder.$this->data_set.'/*.{'.substr($this->extension,1).'}', GLOB_BRACE);
+        $total = 0;
+        foreach($files as $file):
+            $total++;
+        endforeach;
+        return $total;
+    }
+
+    /*
+    *   obtain the min id from this data set
+    *
+    *   @return int min id
+    */
+    public function first(){
+        $files = glob($this->folder.$this->data_set.'/*.{'.substr($this->extension,1).'}', GLOB_BRACE);
+        $min = $this->total();
+        foreach($files as $file):
+            $int = str_replace($this->extension,'',basename($file));
+            if($int <= $min ):
+                $min = $int;
+            endif;
+        endforeach;
+        return $min;
+    }
+
 
     /*
     *

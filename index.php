@@ -19,10 +19,12 @@ if($data->runable):
 endif;
 
 p($data->all(false));
-echo'<code>';
-echo $data->all();
-echo'</code>';
-
 p($data->newSet('users'));
 p($data->allSets());
+
+
+echo 'Min :' . $data->first() .'<br />';
+echo 'max :' . $data->last() .'<br />';
+echo 'total :' . $data->total() .'<br />';
+
 ?>
