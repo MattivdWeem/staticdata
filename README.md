@@ -33,7 +33,7 @@ Now just call it: and you wil have your object ready.
     $data = new data('static');
 You can work with the data set by calling a public function around the given class object.
 
-    $data->getAll();
+    $data->all();
 
 Will return everything of the data group.
 
