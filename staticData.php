@@ -238,7 +238,6 @@ class data{
             $input = file_get_contents($input);
         endif;
         $import = json_decode($input);
-        echo'<pre>';
         foreach($import as $i):
             $this->create($i);
         endforeach;

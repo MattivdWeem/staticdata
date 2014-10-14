@@ -28,5 +28,5 @@ echo 'max :' . $data->last() .'<br />';
 echo 'total :' . $data->total() .'<br />';
 
 //$data->import('data/backups/static-backup1413322445.json');
-//echo $data->import('data/backups/static-backup1413322898.json');
+//echo $data->export();
 ?>
