@@ -141,7 +141,7 @@ class data{
     *   @param json Return as json or as array
     *   @return array or json
     */
-    public function getAll($json = true){
+    public function all($json = true){
         $files = glob($this->folder.$this->data_set.'/*.{'.substr($this->extension,1).'}', GLOB_BRACE);
         $give = array();
         $contents = array();
@@ -156,6 +156,15 @@ class data{
         asort($give);
         if($json):return json_encode($give);endif;
         return $give;
+    }
+
+    /*
+    *   Get a list of all sets
+    *
+    *   @return array of  data stacks
+    */
+    public function allSets(){
+        return str_replace($this->folder,'',array_filter(glob($this->folder.'*'), 'is_dir'));
     }
 
     /*

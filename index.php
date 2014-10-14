@@ -1,5 +1,6 @@
 <?php
 include('staticData.php');
+function p($i){echo '<pre>';print_r($i);echo'</pre>';}
 
 $data = new data('static');
 
@@ -17,10 +18,11 @@ if($data->runable):
     //$data->create($array);
 endif;
 
-echo'<pre>';
-print_r($data->getAll(false));
-print_r($data->newSet('users'));
-echo'</pre>';
+p($data->all(false));
+echo'<code>';
+echo $data->all();
+echo'</code>';
 
-
+p($data->newSet('users'));
+p($data->allSets());
 ?>
