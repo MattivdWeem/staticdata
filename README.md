@@ -8,9 +8,15 @@ Staticdata will just replace a SQL server, it uses files with objects to save yo
 Simple, to replace sql. Working on a local machine wit braggy sql support? Just not in the mood the set it up? Or just want an awsome super safe local file stored database? Which works great with PHP Safe's encryption? Then static Data is something for you!!
 
 Now enough with the sales talk, it is a simple set up, the only thing you need is a chmodded file and the class will handle your data problems.
+#### Uppoints
+ - easy back ups
+ - simple set ups
+ - dynamic databases with easy extra fields
+ - secure
+ - no random sql server giberish / no extra servers needed
 
 #### Downpoint
-Wel above an x amount of files the system could get kinda slow.. (on the bright side: easy backup !)
+Wel above an x amount of files the system could get kinda slow..
 
 #### Setting up:
 include the staticData.php class, and wel yes.. call it: (we are working on building a bigger better and faster version with more valid php, so no composer support yet.)
