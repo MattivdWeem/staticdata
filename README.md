@@ -73,6 +73,8 @@ Function list:
  - all      : Return all data objects
  - allSets  : Return array of all data sets
  - where    : Returns array of all data objects matching criteria
+ - export   : Creates an json export of your data set (inside '{yourfolder}/backups')
+ - import   : Opens json file or reads json input and creates the data objects for it
  - .....
 
 hf ;).
