@@ -217,5 +217,33 @@ class data{
     }
 
 
+    /*
+    *   Create a backup of the file
+    *   @return file name of json file with backup
+    */
+    public function export(){
+        $all = $this->all(false);
+        $file = $this->folder.'backups/'.$this->data_set.'-backup'.time().'.json';
+        file_put_contents($file,json_encode($all));
+        return $file;
+    }
+
+    /*
+    *   Read backup
+    *   @param str input the file or string that will be imported
+    *   @return void
+    */
+    public function import($input){
+        if(file_exists($input)):
+            $input = file_get_contents($input);
+        endif;
+        $import = json_decode($input);
+        echo'<pre>';
+        foreach($import as $i):
+            $this->create($i);
+        endforeach;
+    }
+
+
 
 }
