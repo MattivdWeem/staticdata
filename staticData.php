@@ -159,8 +159,8 @@ class data{
                 $return_array += $construct;
             endif;
         endforeach;
-      return $return_array;
-
+        return $return_array;
+    }
 
 
 

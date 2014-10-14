@@ -1,19 +1,24 @@
 <?php
-    include('staticData.php');
+include('staticData.php');
 
-    $data = new data('static');
+$data = new data('static');
 
-    $array = array(
+$array = array(
 
-        'name' => 'Matti',
-        'age' => 19,
-        'awsome' => true,
-        'tagx' => 'Tagggg'
+    'first-name' => 'Matti',
+    'sur-name' => 'van de Weem',
+    'age' => 19,
+    'country' => 'nl',
+    'Main language' => 'PHP'
 
-    );
+);
 
-    if($data->runable):
-        $data->create($array);
-    endif;
+if($data->runable):
+    //$data->create($array);
+endif;
+
+echo'<pre>';
+print_r($data->getAll(false));
+echo'</pre>';
 
 ?>
