@@ -30,7 +30,22 @@ You can work with the data set by calling a public function around the given cla
     $data->getAll();
 
 Will return everything of the data group.
-Just check the class file for the rest of the functions ATM
+
+    Array
+(
+    [1] => Array
+        (
+            [id] => 1
+            [first-name] => Matti
+            [sur-name] => van de Weem
+            [age] => 19
+            [country] => nl
+            [Main language] => PHP
+        )
+
+)
+
+Just check the class file for the rest of the functions ATM (larger readmeh incomming!!)
 
 hf ;).
 
